@@ -3,8 +3,10 @@
 Lets a Claude chat (claude.ai / desktop app) and a Claude Code terminal session
 talk to each other through two text files, so you stop copy-pasting between them.
 
-  Chat  ──writes──▶ INBOX.md  ──read by──▶ Claude Code
-  Chat  ◀──reads── OUTBOX.md ◀──writes── Claude Code
+```
+Chat  ──writes──▶ INBOX.md  ──read by──▶ Claude Code
+Chat  ◀──reads── OUTBOX.md ◀──writes── Claude Code
+```
 
 ## What you need
 - Claude desktop app (Mac or Windows) — the chat needs to reach files on your computer
@@ -19,14 +21,18 @@ talk to each other through two text files, so you stop copy-pasting between them
 ## Step 2 — Create the relay folder
 In a terminal:
 
-  mkdir -p ~/Developer/.relay
-  cp autopilot-relay/relay-template/README.md ~/Developer/.relay/README.md
+```bash
+mkdir -p ~/Developer/.relay
+cp autopilot-relay/relay-template/README.md ~/Developer/.relay/README.md
+```
 
 Then one folder per Claude Code tab, e.g. for a tab called "Forecast":
 
-  mkdir -p ~/Developer/.relay/Forecast
-  echo "# INBOX — Forecast"  > ~/Developer/.relay/Forecast/INBOX.md
-  echo "# OUTBOX — Forecast" > ~/Developer/.relay/Forecast/OUTBOX.md
+```bash
+mkdir -p ~/Developer/.relay/Forecast
+echo "# INBOX — Forecast"  > ~/Developer/.relay/Forecast/INBOX.md
+echo "# OUTBOX — Forecast" > ~/Developer/.relay/Forecast/OUTBOX.md
+```
 
 (Claude can also create these for you the first time you say "autopilot".)
 
@@ -57,7 +63,9 @@ box → "Add folder" → pick ~/Developer/.relay (or ~/Developer).
 ## Using Claude Code instead of the app upload
 Claude Code can also load skills from `~/.claude/skills/`:
 
-  git clone <this-repo-url>
-  mkdir -p ~/.claude/skills && cp -r <repo>/autopilot-relay ~/.claude/skills/
+```bash
+git clone <this-repo-url>
+mkdir -p ~/.claude/skills && cp -r <repo>/autopilot-relay ~/.claude/skills/
+```
 
 (Verify the skills folder location in the current Claude Code docs — it may change.)
